@@ -18,19 +18,25 @@ def operar_carro(carro: Carro):
     print('Infos atuais do carro')
     print(carro)
 if __name__ == "__main__":
-    print('Cadastre um carro')
+    print('Cadastre carro 1')
     nm_modelo = input('Digite o modelo: ')
     nm_marca = input('Digite a marca: ')
     nm_cor = input('Digite a cor: ')
-
     kms = float(input('Digite com quantos Kms: '))
+    consumo_medio = float(input('Digite consumo medio: '))
+    tanque = float(input('Digite litros no tanque: '))
+    carro1 = Carro(nm_modelo, nm_marca, nm_cor, 0,  False, tanque, consumo_medio)
 
-    carro1 = Carro(nm_modelo, nm_marca, nm_cor, 0,  False)
-    carro2 = Carro(nm_modelo, nm_marca, nm_cor, 0, False)
-    '''
-    Controlando o carro até ele atingir 10000 Km
-    ''asdasd'
-    while carro1.odometro < 600 and carro2.odometro < 600 :
+    print('Cadastre carro 2')
+    nm_modelo = input('Digite o modelo: ')
+    nm_marca = input('Digite a marca: ')
+    nm_cor = input('Digite a cor: ')
+    kms = float(input('Digite com quantos Kms: '))
+    consumo_medio = float(input('Digite consumo medio: '))
+    tanque = float(input('Digite litros no tanque: '))
+    carro2 = Carro(nm_modelo, nm_marca, nm_cor, 0, False, tanque, consumo_medio)
+
+    while carro1.odometro < 600 and carro2.odometro < 600 and (carro1.tanque>0 or carro2.tanque>0):
         try:
             opCar = 0
             while opCar not in (1,2):
@@ -48,4 +54,4 @@ if __name__ == "__main__":
     if carro1.odometro > carro2.odometro:
         print("Carro 1 Venceu!")
     else:
-        print("Empate! ")
+        print("Carro 2 Venceu!! ")
